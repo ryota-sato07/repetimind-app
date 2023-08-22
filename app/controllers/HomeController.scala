@@ -9,7 +9,7 @@ import play.api.mvc._
 class TestController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
   def title = Action {
-    Ok(Json.obj("content" -> "Scala Play hogehoge Angular Seed"))
+    Ok(Json.obj("content" -> "World"))
   }
 
   def postTest = Action {
