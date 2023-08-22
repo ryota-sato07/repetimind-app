@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql:
+    platform: linux/amd64 # Setting for intel core
+    image: mysql:8.0
+    environment:
+      MYSQL_USER: 'sato07'
+      MYSQL_PASSWORD: 'pass'
+      MYSQL_ROOT_PASSWORD: 'pass'
+    ports:
+      - 13306:3306
+    volumes:
+      - ./conf/database/mysql_data:/docker-entrypoint-initdb.d
+      - ./conf/database/my.cnf:/etc/mysql/conf.d/my.cnf
