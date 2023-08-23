@@ -1,7 +1,8 @@
-package models.repositories
+package models.repository
 
 import javax.inject.Inject
 import models.{ Output, tables }
+import play.db.NamedDatabase
 import play.api.db.slick.{ DatabaseConfigProvider, HasDatabaseConfigProvider }
 import slick.jdbc.JdbcProfile
 
@@ -11,7 +12,7 @@ import scala.concurrent.{ ExecutionContext, Future }
  * アウトプット情報
  */
 class OutputRepository @Inject() (
-  protected val dbConfigProvider: DatabaseConfigProvider
+  @NamedDatabase("test") protected val dbConfigProvider: DatabaseConfigProvider
 )(implicit ec: ExecutionContext) extends HasDatabaseConfigProvider[JdbcProfile] {
 
   val outputTable = new tables.OutputTable(profile)

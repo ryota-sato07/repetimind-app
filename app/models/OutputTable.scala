@@ -16,7 +16,10 @@ class OutputTable(val profile: JdbcProfile) {
 
     def * = (
       id, title, content
-    ) <> (Output.tupled, Output.unapply)
+    ) .<> (
+      (Output.apply _).tupled,
+      (Output.unapply _)
+    )
   }
 
   val query = TableQuery[InternalOutputTable]
