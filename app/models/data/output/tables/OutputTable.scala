@@ -1,4 +1,4 @@
-package models.tables
+package models.data.output.tables
 
 import slick.jdbc.JdbcProfile
 import models.data.output.Output
