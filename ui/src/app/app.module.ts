@@ -1,41 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 
+import { routes } from './app.routes';
 import { AppComponent } from './app.component';
-import { RouteExampleComponent } from './route-example/route-example.component';
 
-import { AppService } from './app.service';
 import { AppHttpInterceptorService } from './http-interceptor.service';
+import { OutputComponent } from './pages/output/output.component';
 
-const routes: Routes = [
-  {
-    path: 'scala',
-    component: RouteExampleComponent,
-    data: { technology: 'Scala' }
-  },
-  {
-    path: 'play',
-    component: RouteExampleComponent,
-    data: { technology: 'Play' }
-  },
-  {
-    path: 'angular',
-    component: RouteExampleComponent,
-    data: { technology: 'Angular' }
-  },
-  {
-    path: '**',
-    redirectTo: '/play',
-    pathMatch: 'full'
-  }
-];
-
+/**
+ *  Module Definition
+ */
 @NgModule({
   declarations: [
     AppComponent,
-    RouteExampleComponent
+    OutputComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +27,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    AppService,
     {
       multi: true,
       provide: HTTP_INTERCEPTORS,
@@ -56,5 +35,5 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+
+export class AppModule {}
