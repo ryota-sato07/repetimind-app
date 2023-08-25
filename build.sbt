@@ -11,9 +11,16 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 scalaVersion := "2.13.11"
 
 libraryDependencies ++= Seq(
-  "mysql"                   % "mysql-connector-java"  % "8.0.33",
+
+  // --[ Play ]-----------------------------------------------------------------
   "com.typesafe.play"      %% "play-slick"            % "5.0.0",
   "com.typesafe.play"      %% "play-slick-evolutions" % "5.0.0",
   "org.scalatestplus.play" %% "scalatestplus-play"    % "5.1.0" % Test,
-  ws, guice
+  ws, guice,
+
+  // --[ OSS ]------------------------------------------------------------------
+  "mysql"         % "mysql-connector-java"  % "8.0.33",
+  "com.chuusai"  %% "shapeless"             % "2.3.3",
+  "com.beachape" %% "enumeratum"            % "1.6.1",
+
 )
