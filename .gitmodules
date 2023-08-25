@@ -1,0 +1,3 @@
+[submodule "conf/database"]
+	path = conf/database
+	url = git@github.com:ryota-sato07/repetimind-database.git
