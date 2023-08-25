@@ -1,7 +1,7 @@
-package models.repository
+package models.data.output.repository
 
 import javax.inject.Inject
-import models.{ Output, tables }
+import models.data.output.{ Output, tables }
 import play.db.NamedDatabase
 import play.api.db.slick.{ DatabaseConfigProvider, HasDatabaseConfigProvider }
 import slick.jdbc.JdbcProfile
@@ -24,14 +24,13 @@ class OutputRepository @Inject() (
   /**
    * アウトプット情報の新規追加
    */
-  def create(title: String, content: String): Future[Output] = {
-    db.run(
-      query
-        .returning(query.map(_.id))
-        .into((output, id) => output.copy(id = id))
-        += Output(0, title, content)
-    )
-  }
+  // def create(title: String, content: String): Future[Output] = {
+  //   db.run(
+  //     query
+  //       .returning(query.map(_.id))
+  //       .into((output, id) => output.copy(id = id))
+  //       += Output(0, title, content)
+  //   )
 
   /**
    * アウトプット情報の一覧取得

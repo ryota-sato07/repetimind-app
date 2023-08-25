@@ -8,7 +8,7 @@ import play.api.libs.json.Json
 import play.api.mvc._
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
 
-import models.repository.OutputRepository
+import models.data.output.repository.OutputRepository
 
 @Singleton
 class TestController @Inject()(
