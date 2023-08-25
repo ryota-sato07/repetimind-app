@@ -1,7 +1,7 @@
 package models.tables
 
 import slick.jdbc.JdbcProfile
-import models.Output
+import models.data.output.Output
 import java.time.LocalDateTime
 
 /**

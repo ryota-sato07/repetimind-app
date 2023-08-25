@@ -1,7 +1,7 @@
-package models.repository
+package models.data.output.repository
 
 import javax.inject.Inject
-import models.{ Output, tables }
+import models.data.output.{ Output, tables }
 import play.db.NamedDatabase
 import play.api.db.slick.{ DatabaseConfigProvider, HasDatabaseConfigProvider }
 import slick.jdbc.JdbcProfile

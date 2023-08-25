@@ -1,4 +1,4 @@
-package models
+package models.data.output
 
 import java.time.LocalDateTime
 
