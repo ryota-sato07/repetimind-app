@@ -24,14 +24,13 @@ class OutputRepository @Inject() (
   /**
    * アウトプット情報の新規追加
    */
-  def create(title: String, content: String): Future[Output] = {
-    db.run(
-      query
-        .returning(query.map(_.id))
-        .into((output, id) => output.copy(id = id))
-        += Output(0, title, content)
-    )
-  }
+  // def create(title: String, content: String): Future[Output] = {
+  //   db.run(
+  //     query
+  //       .returning(query.map(_.id))
+  //       .into((output, id) => output.copy(id = id))
+  //       += Output(0, title, content)
+  //   )
 
   /**
    * アウトプット情報の一覧取得
