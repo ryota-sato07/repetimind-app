@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 
 import { AppHttpInterceptorService } from './http-interceptor.service';
 import { OutputComponent } from './pages/output/output.component';
+import { SectionHeaderComponent } from './shared/section-header/section-header.component';
+import { SectionSidebarComponent } from './shared/section-sidebar/section-sidebar.component';
 
 /**
  *  Module Definition
@@ -15,7 +17,9 @@ import { OutputComponent } from './pages/output/output.component';
 @NgModule({
   declarations: [
     AppComponent,
-    OutputComponent
+    OutputComponent,
+    SectionHeaderComponent,
+    SectionSidebarComponent
   ],
   imports: [
     BrowserModule,

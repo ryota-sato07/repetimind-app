@@ -1,9 +1,15 @@
 <div>
-  <!-- Sample layout -->
-  <nav>
-    <!-- Navigation links -->
-  </nav>
+  <!-- Header layout -->
+  <app-section-header></app-section-header>
+
+  <!-- Page layout -->
   <div>
-    <router-outlet></router-outlet>
+    <!-- Navigation links -->
+    <app-section-sidebar></app-section-sidebar>
+
+    <!-- Main Content -->
+    <div>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
