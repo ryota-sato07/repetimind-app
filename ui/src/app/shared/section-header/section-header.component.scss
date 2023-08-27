@@ -1,0 +1,12 @@
+@import "size";
+
+header.content {
+  padding:    $space-m $space-l;
+  background: #4051b6;
+
+  .content__title {
+    color:       #fff;
+    font-size:   24px;
+    font-weight: bold;
+  }
+}

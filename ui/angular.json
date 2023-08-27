@@ -29,6 +29,11 @@
             "styles": [
               "src/styles/reset.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles/shared"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
