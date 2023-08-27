@@ -1,0 +1,34 @@
+@import "size";
+
+nav.content {
+  width:          204px;
+  height:         calc(100vh - 56px); // 56 = ヘッダーの高さ
+  border-right:   1px solid #dcdcdc;
+
+  .content__wrapper {
+    display:         flex;
+    flex-flow:       column;
+    justify-content: space-between;
+    height:          100%;
+  }
+
+  .content__item {
+    padding: $space-m;
+
+    &-link {
+      display: flex;
+    }
+  }
+
+  .content__my {
+    display:         flex;
+    flex-flow:       column;
+    justify-content: space-between;
+    margin-bottom:   $space-m;
+
+    &-link {
+      display: flex;
+      padding: $space-m;
+    }
+  }
+}
