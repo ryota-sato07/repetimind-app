@@ -1,0 +1,38 @@
+@import "size";
+
+nav.content {
+  padding: $space-l $space-l $space-l $space-m;
+  height:  calc(100vh - 120px); // 120 = 上下余白 + ヘッダーの高さ
+  border-right: 1px solid #dcdcdc;
+
+  .content__wrapper {
+    display:         flex;
+    flex-flow:       column;
+    justify-content: space-between;
+    height:          100%;
+  }
+
+  .content__item {
+    &:not(:first-child) {
+      padding: $space-m 0;
+    }
+
+    &-link {
+      display: flex;
+    }
+  }
+
+  .content__my {
+    display:         flex;
+    flex-flow:       column;
+    justify-content: space-between;
+
+    &-link {
+      display: flex;
+    }
+
+    &-link:not(:last-child) {
+      padding: $space-m 0;
+    }
+  }
+}
