@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
-  styleUrls: ['./output.component.css']
+  styleUrls: ['./output.component.scss']
 })
 export class OutputComponent implements OnInit {
 
@@ -11,5 +11,8 @@ export class OutputComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  // TODO: 削除
+  items = ['a','b','c','d','e'];
 
 }
