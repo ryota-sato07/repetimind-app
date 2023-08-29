@@ -1,0 +1,22 @@
+@import "size";
+
+.content {
+
+  &__title {
+    line-height: 20px;
+  }
+
+  &__title-text {
+    font-weight: bold;
+  }
+
+  &__action {
+    margin-top:      $space-m;
+    display:         flex;
+    justify-content: space-between;
+  }
+
+  &__action-button {
+    width: 112px;
+  }
+}

@@ -13,6 +13,9 @@ import { OutputComponent } from './pages/output/output.component';
 import { SectionHeaderComponent } from './shared/section-header/section-header.component';
 import { SectionSidebarComponent } from './shared/section-sidebar/section-sidebar.component';
 
+import * as deleteDialog from './pages/output/dialog';
+
+
 /**
  *  Module Definition
  */
@@ -24,6 +27,8 @@ import { SectionSidebarComponent } from './shared/section-sidebar/section-sideba
     SectionSidebarComponent,
     // ページレイアウト
     OutputComponent,
+    // ダイアログ
+    deleteDialog.DeleteOutputComponent,
   ],
   imports: [
     BrowserModule,
