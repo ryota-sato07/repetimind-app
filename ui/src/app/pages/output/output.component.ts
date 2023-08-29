@@ -15,7 +15,7 @@ export class OutputComponent implements OnInit {
   }
 
   // TODO: 削除
-  items = ['a','b','c','d','e'];
+  items = ['a', 'b', 'c', 'd', 'e'];
 
   // -- [ Methods ] ------------------------------------------------------------
   /**
@@ -26,6 +26,11 @@ export class OutputComponent implements OnInit {
       width:     '280px',
       maxWidth:  '280px',
       autoFocus: false,
+      // TODO: Fix state data
+      data: {
+        outputId:    1,
+        outputTitle: 'aの学習アウトプット'
+      },
     });
   }
 
