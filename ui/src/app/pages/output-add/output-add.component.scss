@@ -1,0 +1,12 @@
+@import "size";
+
+.content {
+  padding:    $space-l;
+  background: #f6f8fa;
+  height:     calc(100% - 56px);
+
+  &__head-title {
+    font-size:   20px;
+    font-weight: bold;
+  }
+}

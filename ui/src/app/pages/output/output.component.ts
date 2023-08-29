@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { MatDialog } from '@angular/material/dialog';
 import * as deleteDialog from './dialog';
 
@@ -9,7 +10,10 @@ import * as deleteDialog from './dialog';
 })
 export class OutputComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(
+    private dialog: MatDialog,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -18,6 +22,13 @@ export class OutputComponent implements OnInit {
   items = ['a', 'b', 'c', 'd', 'e'];
 
   // -- [ Methods ] ------------------------------------------------------------
+  /**
+   * 登録ページ遷移
+   */
+  onSubmit(): void {
+    this.router.navigate([ '/output/add' ]);
+  }
+
   /**
    * 削除ダイアログを開く
    */

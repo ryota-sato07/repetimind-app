@@ -10,6 +10,7 @@ import { MaterialModule } from './material.module';
 
 import { AppHttpInterceptorService } from './http-interceptor.service';
 import { OutputComponent } from './pages/output/output.component';
+import { OutputAddComponent } from './pages/output-add/output-add.component';
 import { SectionHeaderComponent } from './shared/section-header/section-header.component';
 import { SectionSidebarComponent } from './shared/section-sidebar/section-sidebar.component';
 
@@ -27,6 +28,7 @@ import * as deleteDialog from './pages/output/dialog';
     SectionSidebarComponent,
     // ページレイアウト
     OutputComponent,
+    OutputAddComponent,
     // ダイアログ
     deleteDialog.DeleteOutputComponent,
   ],
