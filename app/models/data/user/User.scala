@@ -3,6 +3,7 @@ package models.data.user
 import java.time.LocalDateTime
 import shapeless.tag
 import shapeless.tag.@@
+import slick.jdbc.MySQLProfile.api._
 
 /**
  * ユーザー情報
@@ -36,4 +37,11 @@ object User {
   type Password = String @@ PasswordTag
   def tagPassword(pass: String): Password = tag[PasswordTag][String](pass)
 
+  // --[ Typed Type ]-----------------------------------------------------------
+  // IDの型に対して暗黙的なTypedTypeインスタンス
+  implicit val userIdColumnType: BaseColumnType[User.ID] =
+  MappedColumnType.base[User.ID, Long](
+    taggedId => taggedId,
+    longId   => shapeless.tag[User.IdTag][Long](longId)
+  )
 }
