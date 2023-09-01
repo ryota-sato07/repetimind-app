@@ -24,13 +24,16 @@ class OutputRepository @Inject() (
   /**
    * アウトプット情報の新規追加
    */
-  // def create(title: String, content: String): Future[Output] = {
-  //   db.run(
-  //     query
-  //       .returning(query.map(_.id))
-  //       .into((output, id) => output.copy(id = id))
-  //       += Output(0, title, content)
-  //   )
+  def create(output: Output): Future[Output.ID] = {
+    db.run(
+      (query
+        returning query.map(_.id)
+        into ((_, idOption) =>
+          idOption.getOrElse(throw new RuntimeException("Failed to get the ID"))
+        )
+      ) += output.copy(id = None)
+    )
+  }
 
   /**
    * アウトプット情報の一覧取得
