@@ -1,6 +1,7 @@
 package models.data.output
 
 import java.time.LocalDateTime
+import java.time.LocalDateTime._
 import shapeless.tag
 import shapeless.tag.@@
 import slick.jdbc.MySQLProfile.api._
@@ -12,13 +13,13 @@ import models.data.user.User
  */
 import Output._
 case class Output(
-  id:        Option[ID],       // 管理ID
-  userId:    User.ID,          // ユーザーID
-  title:     String,           // タイトル
-  content:   String,           // 本文
-  isRemind:  Boolean,          // リマインドのアクティブフラグ
-  createdAt: LocalDateTime,    // 作成日時
-  updatedAt: LocalDateTime     // 更新日時
+  id:        Option[ID],             // 管理ID
+  userId:    User.ID,                // ユーザーID
+  title:     String,                 // タイトル
+  content:   String,                 // 本文
+  isRemind:  Boolean,                // リマインドのアクティブフラグ
+  createdAt: LocalDateTime = now(),  // 作成日時
+  updatedAt: LocalDateTime = now()   // 更新日時
 )
 
 object Output {

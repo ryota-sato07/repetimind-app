@@ -3,6 +3,7 @@ package models.data.user
 import java.time.LocalDateTime
 import shapeless.tag
 import shapeless.tag.@@
+import play.api.libs.json._
 import slick.jdbc.MySQLProfile.api._
 
 /**
@@ -44,4 +45,8 @@ object User {
     taggedId => taggedId,
     longId   => shapeless.tag[User.IdTag][Long](longId)
   )
+
+  // --[ JSON : Serializer for Tagged Type ]------------------------------------
+  implicit val userIdReads:  Reads[ID]  = Reads.of[Long].map(tagID)
+  implicit val userIdWrites: Writes[ID] = Writes[ID](id => JsNumber(id))
 }

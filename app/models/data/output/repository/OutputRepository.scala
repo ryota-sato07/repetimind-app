@@ -24,7 +24,7 @@ class OutputRepository @Inject() (
   /**
    * アウトプット情報の新規追加
    */
-  def create(output: Output): Future[Output.ID] = {
+  def add(output: Output): Future[Output.ID] = {
     db.run(
       (query
         returning query.map(_.id)

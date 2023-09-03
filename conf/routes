@@ -2,14 +2,7 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Serve index page from public directory
-GET     /                           controllers.FrontendController.index()
+GET     /                 controllers.FrontendController.index()
+GET     /api/output       controllers.api.output.PostOutputController.add
 
-# An example route (Prefix all API routes with apiPrefix defined in application.conf)
-GET     /api/summary                controllers.TestController.title
-
-# Serve static assets under public directory
-GET     /*file                      controllers.FrontendController.assetOrDefault(file)
-
-# Test post request
-POST    /api/postTest               controllers.TestController.postTest()
+GET     /*file            controllers.FrontendController.assetOrDefault(file)
