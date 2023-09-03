@@ -7,6 +7,9 @@ import models.data.output.{ Output, repository }
 import models.api.output.JsonPostOutput
 import scala.concurrent.{ ExecutionContext, Future }
 
+/**
+ * POST Output
+ */
 class PostOutputController @Inject()(
   cc:               ControllerComponents,
   outputRepository: repository.OutputRepository
