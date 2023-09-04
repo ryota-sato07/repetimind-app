@@ -1,12 +1,38 @@
 <div class="content">
   <div class="content__wrapper">
+    <!-- title -->
     <div class="content__head">
       <h2 class="content__head-title">アウトプット登録</h2>
     </div>
-    <div class="content__form">
-      タイトル
-      <br>
-      本文
-    </div>
+
+    <!-- form -->
+    <form [formGroup]="outputForm" class="content__form">
+      <p class="content__form-desc">アウトプットする内容を入力してください。</p>
+      <mat-form-field appearance="fill">
+        <mat-label>タイトル</mat-label>
+        <input
+          matInput
+          placeholder     = "タイトルを入力してください"
+          formControlName = "title"
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>アウトプット内容</mat-label>
+        <textarea
+          matInput
+          rows            = "5"
+          placeholder     = "アウトプット内容を入力してください"
+          formControlName = "content"
+        ></textarea>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color   = "primary"
+        type    = "submit"
+        (click) = "onSubmit()"
+      >登録</button>
+    </form>
   </div>
 </div>
