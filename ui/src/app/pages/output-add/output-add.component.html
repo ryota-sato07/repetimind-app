@@ -15,7 +15,9 @@
           placeholder     = "タイトルを入力してください"
           formControlName = "title"
         >
-        <mat-error *ngIf="title.invalid">タイトルを入力してください</mat-error>
+        <mat-error *ngIf="outputForm.get('title').invalid">
+          タイトルを入力してください
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -26,7 +28,9 @@
           placeholder     = "アウトプット内容を入力してください"
           formControlName = "content"
         ></textarea>
-        <mat-error *ngIf="content.invalid">アウトプット内容を入力してください</mat-error>
+        <mat-error *ngIf="outputForm.get('content').invalid">
+          アウトプット内容を入力してください
+        </mat-error>
       </mat-form-field>
 
       <button

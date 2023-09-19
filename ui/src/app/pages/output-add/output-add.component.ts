@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -17,7 +18,9 @@ export class OutputAddComponent implements OnInit {
     'content': new FormControl(null, Validators.required)
   });
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
   ngOnInit() { }
 
   // -- [ Methods ] ------------------------------------------------------------
@@ -26,7 +29,8 @@ export class OutputAddComponent implements OnInit {
    */
   onSubmit(): void {
     if (this.outputForm.valid) {
-      alert('submit add button'); // TODO
+      alert('アウトプットが登録されました。'); // TODO
+      this.router.navigate([ '/output' ]);
     }
   }
 
