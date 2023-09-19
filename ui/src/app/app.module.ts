@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -40,6 +41,7 @@ import * as deleteDialog from './pages/output/dialog';
       cookieName: 'Csrf-Token',
       headerName: 'Csrf-Token',
     }),
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule
   ],
